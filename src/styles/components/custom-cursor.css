@@ -1,0 +1,75 @@
+.cursor-dot,
+.cursor-dot-outline {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 1;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.cursor-dot {
+    width: 4px;
+    height: 4px;
+    background-color: var(--text);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, border 0.1s linear, width 0.3s ease-in-out;
+
+    &.hovering {
+        width: 0;
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        border-style: solid;
+        height: 26px;
+
+        &.play {
+            border-color: transparent transparent transparent #202020;
+            border-width: 13px 0 13px 26px;
+        }
+
+        &.pause {
+            border-color: transparent transparent transparent #202020;
+            border-style: double;
+            border-width: 0 0 0 20px;
+        }
+
+    }
+
+    &.fullscreen {        
+        color: var(--background);
+        transform: translate(500%, -600%);
+        width: 0;
+        
+        &::after {
+            content: '(fullscreen)';
+            color: var(--background);
+            font-style: italic;
+        }
+    }
+}
+
+.cursor-dot-outline {
+    background-color: transparent;
+    border: 1px solid var(--text);
+    height: 20px;
+    transition: opacity 0.3s ease-in-out, transform 0.05s ease-in-out, background-color 0.3s ease-in-out;
+    width: 20px;
+
+    &.clicking {
+        transform: translate(-50%, -50%) scale(0.5, 0.5);
+    }
+
+    &.hovering {
+        background-color: var(--shadow);
+        border: 2px solid var(--shadow);
+        transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+        opacity: .9;
+        transform: translate(-50%, -50%) scale(2.5, 2.5);
+    }
+}

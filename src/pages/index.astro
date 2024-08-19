@@ -1,0 +1,58 @@
+---
+import Loader from '../components/Loader';
+import Navbar from '../components/Navbar';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Homepage from '../components/Homepage';
+import Cursor from '../components/Cursor';
+
+import '../styles/index.css';
+import type { render } from 'astro/compiler-runtime';
+
+const projects = [
+  {
+    title: 'Supernova',
+    description: 'Description for video 1',
+    source: '/supernova.mp4',
+    link: '/projects/supernova',
+    preview: 'Preview for video 1',
+  },
+  {
+    title: 'Video 2',
+    description: 'Description for video 2',
+    source: '/supernova.mp4',
+    link: '/video2',
+    preview: 'Preview for video 2',
+  },
+  {
+    title: 'Video 3',
+    description: 'Description for video 3',
+    source: '/supernova.mp4',
+    link: '/video3',
+    preview: 'Preview for video 3',
+  },
+];
+---
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <Cursor client:only />
+    <Loader client:visible />
+    <nav>
+      <Navbar client:visible />
+    </nav>
+    <header>
+      <Header client:visible />
+    </header>
+    <main>
+      <Homepage projects={projects} client:visible />
+    </main>
+    <footer><Footer client:visible /></footer>
+    <script src="../scripts/loader.ts"></script>
+  </body>
+</html>

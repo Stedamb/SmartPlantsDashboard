@@ -1,0 +1,10 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { Work } from "../components/Work";
+---
+<PageLayout title="Dashboard">
+	<main>
+		<Work client:visible />
+	</main>
+</PageLayout>
+

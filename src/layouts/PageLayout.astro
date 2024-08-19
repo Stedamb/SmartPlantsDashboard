@@ -1,0 +1,30 @@
+---
+import Navbar from '../components/Navbar';
+import Title from '../components/Title';
+import Footer from '../components/Footer';
+
+import Cursor from '../components/Cursor';
+
+import '../styles/index.css';
+
+const { title } = Astro.props;
+---
+
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/javascript">
+      var global = window;
+    </script>
+  </head>
+  <body>
+    <!-- <Cursor client:only /> -->
+    <nav><Navbar client:visible /></nav>
+    <header><Title title={title} /></header>
+    <slot />
+    <footer><Footer client:visible /></footer>
+  </body>
+</html>

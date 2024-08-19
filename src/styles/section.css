@@ -1,0 +1,27 @@
+@media(min-width: 1024px) {
+    .Staggered::before {
+        background: var(--background);
+        border: 1px solid var(--text);
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 1.5rem;
+        left: 1.5rem;
+        z-index: -1;
+        transition: all 0.3s ease;
+    }
+
+    .Staggered:hover::before {
+        top: 1rem;
+        left: 1rem;
+    }
+}
+
+.ContentSection {
+    @media(min-width: 768px) {
+        .Video {
+            z-index: -1;
+        }
+    }
+}

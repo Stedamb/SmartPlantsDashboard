@@ -1,0 +1,62 @@
+.scrolling-banner {
+    white-space: nowrap;
+    box-sizing: border-box;
+  overflow: hidden;;
+}
+
+.text-container {
+    display: inline-block;
+}
+
+.scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
+.scroll-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    overflow: hidden;
+    gap: 2.5rem;
+}
+.scroll {
+    max-width: none;
+    white-space: nowrap;
+    animation: marquee 5s linear infinite;
+    display: flex;
+    gap: 1.5rem;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.first:hover,
+.first:hover~.second {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.second:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.scroll:hover>.first:not(:hover) {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}

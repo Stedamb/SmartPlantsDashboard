@@ -1,0 +1,63 @@
+@import url(./components/infinite-scroll.css);
+@import url(./components/custom-cursor.css);
+@import url(./components/loader.css);
+
+@import url(./container.css);
+@import url(./multimedia.css);
+@import url(./typography.css);
+@import url(./section.css);
+@import url(./ui.css);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    color-scheme: light dark;
+
+    /* Realtime Colors */
+    --text: #090909;
+    --background: #f5f5f5;
+    --primary: #0055ff;
+    --secondary: #88ff00;
+    --tertairy: #e0e0e0;
+    --accent: #0055ff;
+    --shadow: #eeeeee;
+
+    color-scheme: light dark;
+    color: var(--text);
+    background-color: var(--background);
+
+    /* Fonts */
+    font-size: 12px !important;
+
+    @media screen and (min-width: 768px) {
+        font-size: 18px !important;
+    }
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+footer { 
+    margin-top: auto;
+}
+
+.hide{
+    opacity: 0;
+}
